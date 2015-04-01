@@ -10,7 +10,10 @@ var PersonSchema = new Schema({
 	description: String,
 	location: String,
 	photo: String, // url at amazon s3
-	audio: String, // url at amazon s3
+	audio: {
+		s3url: String, // url at amazon s3
+		filename: String
+	},
   dateAdded: {type: Date, default: moment},
   lastupdated : {type: Date, default: moment}
 });

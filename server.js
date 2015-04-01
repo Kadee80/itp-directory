@@ -63,9 +63,9 @@ app.all('*', function(req, res, next){
 var routes = require('./routes/routes.js');
 
 app.get('/',routes.index);
-app.get('/api/students');
-app.get('/api/student/:id');
-app.post('/api/update/student/:id');
+app.get('/api/students',routes.getAll);
+app.get('/api/student/:id',routes.getOne);
+app.post('/api/update/student',routes.update);
 
 // create NodeJS HTTP server using 'app'
 http.createServer(app).listen(app.get('port'), function(){
