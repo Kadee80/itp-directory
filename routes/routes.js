@@ -116,7 +116,8 @@ exports.getOne = function (req,res){
 exports.update = function(req,res){
 
 	console.log('saving audio to db');
-
+  console.log(req);
+  
 	var netId = req.body.netId;
 
 	var originalFile = req.files.audio.name.replace(/\s+/g, '-').toLowerCase();
