@@ -120,10 +120,10 @@ exports.update = function(req,res){
   
 	var netId = req.body.netId;
 
-	var originalFile = req.files.audio.name.replace(/\s+/g, '-').toLowerCase();
-  var mimeType = req.files.audio.type; // image/jpeg or actual mime type
+	var originalFile = req.files.file.name.replace(/\s+/g, '-').toLowerCase();
+  var mimeType = req.files.file.type; // image/jpeg or actual mime type
 	var filename = netId + "_audio_" + new Date().getTime().toString()+ originalFile;
-  var path = req.files.audio.path; // will be put into a temp directory
+  var path = req.files.file.path; // will be put into a temp directory
 
   fs.readFile(path, function(err, file_buffer){
 
